@@ -1,4 +1,4 @@
-# Klarna Checkout SDK Sample App
+# Klarna Checkout iOS SDK
 
 ## SDK Integration
 

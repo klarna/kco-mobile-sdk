@@ -9,7 +9,7 @@
 #ifndef KCOVersion_h
 #define KCOVersion_h
 
-#define KCOSDKVersion @"1.0"
+#define KCOSDKVersion @"1.1"
 #define KCOSDKPlatform @"ios"
 
 #endif /* KCOVersion_h */
