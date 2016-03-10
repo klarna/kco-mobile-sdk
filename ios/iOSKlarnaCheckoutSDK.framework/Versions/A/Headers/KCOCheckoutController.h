@@ -30,12 +30,19 @@
 
 
 /**
- * Returns a controller instance. It will handle checkout events and logic require by Klarna Checkout,
- * but It will never steal the delegate from the webView.
+ * Returns a controller instance. It will handle checkout events and logic require by Klarna Checkout.
  * This controller will keep a weak reference to the viewcontroller.
- * Accepts both WKWebView and UIWebView instances.
  */
-- (instancetype)initWithViewController:(UIViewController *)viewController webView:(id)webView;
+- (instancetype)initWithViewController:(UIViewController *)viewController;
+
+/**
+ *  Attaches a webview for use in the checkout.
+ *  The checkout will never steal the delegates of the webview.
+ *
+ *  @param webView A UIWebView or WKWebView instance
+ */
+- (void)attachWebView:(id)webView;
+
 
 /**
  * This method NEEDS to be called when the provided viewController view is loaded
