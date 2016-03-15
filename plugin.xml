@@ -11,6 +11,7 @@
                 <param name="ios-package" value="KlarnaCheckout"/>
                 <param name="onload" value="true" />
             </feature>
+            <preference name="KeyboardDisplayRequiresUserAction" value="false" />
         </config-file>
         <header-file src="ios/KlarnaCheckout.h" />
         <source-file src="ios/KlarnaCheckout.m" />

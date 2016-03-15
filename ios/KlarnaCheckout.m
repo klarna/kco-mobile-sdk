@@ -17,10 +17,6 @@
     [self.checkout notifyViewDidLoad];
     [self.checkout attachWebView:self.webView];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotification:) name:KCOSignalNotification object:nil];
-    
-    if ([self.webView isKindOfClass:[UIWebView class]]) {
-        ((UIWebView*) self.webView).keyboardDisplayRequiresUserAction = NO;
-    }
 }
 
 - (void)handleNotification:(NSNotification *)notification
