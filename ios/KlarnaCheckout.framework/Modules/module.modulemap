@@ -1,0 +1,5 @@
+framework module KlarnaCheckout {
+    umbrella header "KlarnaCheckout.h"
+    export *
+    module * { export * }
+}
