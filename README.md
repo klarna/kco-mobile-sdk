@@ -13,7 +13,7 @@ iOS SDK is shipped as a framework and can be installed using Cocoapods:
 pod 'KlarnaCheckout'
 ```
 
-##### [Usage](ios/README.md) | [Documentation](cocoadocs.org/docsets/KlarnaCheckout/) | [Example app](https://github.com/klarna/kco-ios-sample-app)
+##### [Usage](ios/README.md) | [Documentation](https://cocoadocs.org/docsets/KlarnaCheckout/) | [Example app](https://github.com/klarna/kco-ios-sample-app)
 
 
 
