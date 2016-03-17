@@ -30,8 +30,8 @@
   },
   "ios": {
     "preserve_paths": "ios/KlarnaCheckout.framework",
-    "public_header_files": "ios/KlarnaCheckout.framework/Versions/A/Headers/*.h",
-    "resources": "ios/KlarnaCheckout.framework/Versions/A/Resources/**/*",
+    "public_header_files": "ios/KlarnaCheckout.framework/Headers/*.h",
+    "resources": "ios/KlarnaCheckout.framework/Resources/**/*.h",
     "vendored_frameworks": "ios/KlarnaCheckout.framework"
   },
   "weak_frameworks": "SafariServices"
