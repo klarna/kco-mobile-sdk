@@ -1,7 +1,6 @@
 #import "KlarnaCheckout.h"
 #import <Cordova/CDVPlugin.h>
-#import <KlarnaCheckout/KCOCheckoutController.h>
-#import <KlarnaCheckout/KCOConstants.h>
+#import <KlarnaCheckout/KlarnaCheckout.h>
 
 @interface KlarnaCheckout ()
 

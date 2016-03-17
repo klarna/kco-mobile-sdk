@@ -13,9 +13,9 @@
             </feature>
             <preference name="KeyboardDisplayRequiresUserAction" value="false" />
         </config-file>
-        <header-file src="ios/KlarnaCheckout.h" />
-        <source-file src="ios/KlarnaCheckout.m" />
-        <resource-file src="ios/KlarnaCheckout.framework/Versions/A/Resources/KlarnaCheckout.bundle" />
+        <header-file src="cordova/KlarnaCheckout.h" />
+        <source-file src="cordova/KlarnaCheckout.m" />
+        <resource-file src="ios/KlarnaCheckout.framework/Resources/KlarnaCheckout.bundle" />
         <framework custom="true" src="ios/KlarnaCheckout.framework" />
         <framework src="UIKit.framework" />
         <framework src="WebKit.framework" />
