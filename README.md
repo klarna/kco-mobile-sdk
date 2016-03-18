@@ -26,7 +26,7 @@ pod 'KlarnaCheckout'
 Klarna Checkout Cordova plugin is available for iOS and Android platforms and can be installed with a single command:
 
 ```
-cordova plugin add com.klarna.checkout
+cordova plugin add kco-mobile-sdk
 ```
 
 ##### NPM | [Example app](https://github.com/klarna/kco-cordova-sample-app)
