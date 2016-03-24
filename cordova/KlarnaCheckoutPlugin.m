@@ -1,15 +1,15 @@
-#import "KlarnaCheckout.h"
+#import "KlarnaCheckoutPlugin.h"
 #import <Cordova/CDVPlugin.h>
 #import <KlarnaCheckout/KlarnaCheckout.h>
 
-@interface KlarnaCheckout ()
+@interface KlarnaCheckoutPlugin ()
 
 @property (strong) KCOCheckoutController *checkout;
 
 @end
 
 
-@implementation KlarnaCheckout
+@implementation KlarnaCheckoutPlugin
 
 -(void)pluginInitialize {
     self.checkout = [[KCOCheckoutController alloc] initWithViewController:self.viewController];

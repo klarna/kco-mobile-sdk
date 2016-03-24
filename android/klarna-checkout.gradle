@@ -1,0 +1,11 @@
+repositories{    
+    jcenter()
+
+    flatDir{
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    compile(name:'klarna-checkout', ext:'aar')
+}

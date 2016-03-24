@@ -1,11 +1,12 @@
 {
   "name": "kco-mobile-sdk",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "description": "Simple integration of Klarna Checkout into hybrid iOS and Android apps",
   "cordova": {
     "id": "kco-mobile-sdk",
     "platforms": [
-      "ios"
+      "ios",
+      "android"
     ]
   },
   "repository": {
@@ -17,7 +18,8 @@
     "checkout",
     "cordova",
     "ecosystem:cordova",
-    "cordova-ios"
+    "cordova-ios",
+    "cordova-android"
   ],
   "author": "Marat Dyatko <marat.dyatko@klarna.com>",
   "license": "Apache 2.0",

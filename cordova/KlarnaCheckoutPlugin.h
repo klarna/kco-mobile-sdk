@@ -1,6 +1,6 @@
 #import <Cordova/CDVPlugin.h>
 
-@interface KlarnaCheckout : CDVPlugin
+@interface KlarnaCheckoutPlugin : CDVPlugin
 
 - (void)handleNotification:(NSNotification *)notification;
 - (void)handleCompletionUri:(NSString *)uri;
