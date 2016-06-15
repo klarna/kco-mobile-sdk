@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @protocol KCOCheckoutSizingDelegate, KCOCheckoutDelegate;
 @protocol KCOCheckoutViewControllerProtocol <NSObject>
@@ -27,10 +28,23 @@
 @property (nonatomic, weak) id<KCOCheckoutSizingDelegate> sizingDelegate;
 
 /**
+ * Parent scrollview to the view controller. If it is placed inside another 
+ * scrollview you should set internalScrolldisabled to YES, and supply a
+ * parent scrollview and a sizing delegate
+ */
+@property (nonatomic, weak) UIScrollView *parentScrollView;
+
+/**
  * Returns the current height of the checkout. Use this to set an initial value for the height
  * when embeddning the checkout in a parent view controller.
  */
 @property (nonatomic, readonly) NSUInteger currentCheckoutHeight;
+
+/**
+ *  Sets content insets and scrollbar edge insets.
+ *  @param contentInsets Insets to be applied to internal scrollview
+ */
+- (void)setScrollViewContentInset:(UIEdgeInsets)contentInsets;
 
 /**
  *  Suspend the current checkout flow

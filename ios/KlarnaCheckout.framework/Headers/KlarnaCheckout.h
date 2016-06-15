@@ -13,6 +13,5 @@
 #import "KCOCheckoutViewControllerProtocol.h"
 #import "KCOCheckoutSizingDelegate.h"
 #import "KCOKlarnaCheckout.h"
-#import "KCOCheckoutController.h"
 
 #endif /* iOS_Klarna_Checkout_SDK_h */
