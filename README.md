@@ -33,5 +33,5 @@ Klarna Checkout Cordova plugin is available for iOS and Android platforms and ca
 cordova plugin add kco-mobile-sdk --save
 ```
 
-##### [NPM](https://www.npmjs.com/package/kco-mobile-sdk) | [Example app](https://github.com/klarna/kco-cordova-example-app)
+##### [Usage](cordova/README.md) | [NPM](https://www.npmjs.com/package/kco-mobile-sdk) | [Example app](https://github.com/klarna/kco-cordova-example-app)
 
