@@ -20,7 +20,7 @@ pod 'KlarnaCheckout'
 
 ## Android
 
-##### [Usage](android/README.md) | Documentation | [Example app](https://github.com/klarna/kco-android-example-app)
+##### [Usage](android/README.md) | [Documentation](https://rawgit.com/klarna/kco-mobile-sdk/master/android/docs/index.html) | [Example app](https://github.com/klarna/kco-android-example-app)
 
 ## Cordova
 [![Cordova NPM](https://img.shields.io/npm/v/kco-mobile-sdk.svg?style=flat-square)](https://www.npmjs.com/package/kco-mobile-sdk)
