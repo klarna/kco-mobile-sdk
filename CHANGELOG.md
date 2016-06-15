@@ -1,3 +1,7 @@
+## 1.4.0 2016-06-15
+* Aligned API.
+* URL blacklisting support for in-app browser.
+
 ## 1.2.0 2016-03-08
 * Ability to switch hybrid webview.
 * Polish in-app browser UI.
