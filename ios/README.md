@@ -22,18 +22,20 @@ Security
 CFNetwork
 ```
 
-### KCOCheckoutController
+### KCOKlarnaCheckout
 
-If you are using the Klarna checkout in a webview by loading your checkout url you should instead use a KCOCheckoutController and instantiate it with your current view controller and the webview. The SDK will handle the checkout flow and return signals on certain events. The SDK will keep a weak reference of the view controller, and we will never override the webview delegate, so you can keep using it as normal.
+#### Existing webview with checkout
 
-To set it up you create a KCOCheckoutController
+If you are using the Klarna checkout in a webview by loading your checkout url you should instead use a KCOKlarnaCheckout and instantiate it with your current view controller and the webview. The SDK will handle the checkout flow and return signals on certain events. The SDK will keep a weak reference of the view controller, and we will never override the webview delegate, so you can keep using it as normal.
+
+To set it up you create a KCOKlarnaCheckout
 
 ```objective-c
-self.checkout = [[KCOCheckoutController alloc] initWithViewController:self];
+self.checkout = [[KCOKlarnaCheckout alloc] initWithViewController:self redirectURI:<YOUR-URL>];
 [self.checkout attachWebView:self.webview];
 ```
 
-To correctly set up the checkout flow you must notify the controller that the view has loaded - so in your viewDidLoad call notifyViewDidLoad on the checkout controller
+To correctly set up the checkout flow you must notify the checkout that the view has loaded - so in your viewDidLoad call notifyViewDidLoad on the checkout.
 
 ```objective-c
 - (void)viewDidLoad {
@@ -44,23 +46,19 @@ To correctly set up the checkout flow you must notify the controller that the vi
 ```
 
 If your view has already loaded when you create the checkout, you should call notifyViewDidLoad immediatelly.
-Warning: You should only call this method once!
+*Warning:* You should only call this method once!
 
 To handle the signals received from the SDK you should set up an observer listening to the KCOSignalNotification.
 To make sure the checkout shows the succesful screen you need to redirect your webview to the completion url upon recieveing the "complete" message.
-
 
 ```objective-c
 - (void)handleNotification:(NSNotification *)notification
 {
 	NSString *name = notification.userInfo[KCOSignalNameKey];
-	NSArray *args = notification.userInfo[KCOSignalArgsKey];
+	NSDictionary *data = notification.userInfo[KCOSignalDataKey];
 
 	if ([name isEqualToString:@"complete"]) {
-		NSDictionary *argsDict = [args objectAtIndex:0];
-		if (argsDict && [argsDict isKindOfClass:[NSDictionary class]]) {
-			[self handleCompletionUri:[argsDict objectForKey:@"uri"]];
-		}
+		[self handleCompletionUri:[data objectForKey:@"uri"]];
 	}
 }
 
@@ -85,15 +83,13 @@ Handling the completion uri could look something like this:
 }
 ```
 
-### KCOKlarnaCheckout
+#### Native
 
-The KCOKlarnaCheckout is the main entry point into the application if you load a checkout using an html snippet fetched through the order api.
-
-This method is specifically to get a more native experience.
+To add the checkout in your native flow instead of setting the webview you supply a snippet which you retrieved through the order api.
 
 First you must create a checkout and set the html snippet.
 ```objective-c
-KCOKlarnaCheckout *checkout = [[KCOKlarnaCheckout alloc] init];
+self.checkout = [[KCOKlarnaCheckout alloc] initWithViewController:self redirectURI:<YOUR-URL>];
 checkout.snippet = snippet;
 ```
 
@@ -114,19 +110,20 @@ First you need to disable internal scrolling and suply a sizing delegate impleme
 ```objective-c
 viewController.internalScrollDisabled = YES;
 viewController.sizingDelegate = self;
+viewController.parentScrollView = self.scrollView;
 ```
 
-You need to implement these two methods. In the resize event it is up to you how to layout the views, but you need to make sure the view gets the required size. Wether you manually set frames or use autolayout is totally up to you.
+You need to implement the resize method. In the resize event it is up to you how to layout the views, but you need to make sure the view gets the required size. Wether you manually set frames or use autolayout is totally up to you.
 
 ```objective-c
-#pragma mark - KCOEmbeddableCheckoutSizingDelegate
-- (UIScrollView *)parentScrollViewForCheckoutViewController:(id)checkout
-{
-// return the parent scroll view.
-}
-
 - (void)checkoutViewController:(id)checkout didResize:(CGSize)size
 {
 // Update the size of the checkout view controller to match the new size.
 }
 ```
+
+#### Redirect URI
+
+Some payment methods require auhtoriziation through third party applications. These can return to your application upon completion, but to do that you need to supply a url that should be used for returning. There does not need to be any special handlers on application load for that url, just that the application will load from that url.
+
+for example you can supply a url like: ```my-schema:return.url``` and add the my-schema protocol to your info plist file.

@@ -10,9 +10,9 @@
 
 /**
  *  Klarna checkout notifications
- *  Contains a userInfo payload where KCOSignalNameKey and KCOSignalArgsKey might be set.
+ *  Contains a userInfo payload where KCOSignalNameKey and KCOSignalDataKey might be set.
  *  @see KCOSignalNameKey
- *  @see KCOSignalArgsKey
+ *  @see KCOSignalDataKey
  */
 FOUNDATION_EXPORT NSString * const KCOSignalNotification;
 
@@ -23,7 +23,7 @@ FOUNDATION_EXPORT NSString * const KCOSignalNotification;
 FOUNDATION_EXPORT NSString * const KCOSignalNameKey;
 
 /**
- *  Key to get the arguments of the signal from the userInfo object.
- *  What this contains depends on what type of signal it is.
+ *  Key to get the data of the signal from the userInfo object.
+ *  This key will contain an NSDictionary or nil
  */
-FOUNDATION_EXPORT NSString * const KCOSignalArgsKey;
+FOUNDATION_EXPORT NSString * const KCOSignalDataKey;
