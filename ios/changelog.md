@@ -3,7 +3,7 @@
 
 ## 1.5
 
-
+Fix SDK bugs on iOS 10
 
 ## 1.4
 
