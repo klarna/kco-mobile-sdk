@@ -1,6 +1,10 @@
 
 # Changelog 
 
+## 1.5
+
+Fix SDK bugs on iOS 10
+
 ## 1.4
 
 ### Removed KCOCheckoutController 

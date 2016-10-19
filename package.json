@@ -1,6 +1,6 @@
 {
   "name": "kco-mobile-sdk",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "Simple integration of Klarna Checkout into hybrid iOS and Android apps",
   "cordova": {
     "id": "kco-mobile-sdk",
