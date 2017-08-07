@@ -1,6 +1,6 @@
 {
   "name": "KlarnaCheckout",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "summary": "Klarna Checkout iOS SDK",
   "license": "Apache License, Version 2.0",
   "authors": {
@@ -23,7 +23,7 @@
   "requires_arc": true,
   "source": {
     "git": "https://github.com/klarna/kco-mobile-sdk.git",
-    "tag": "v1.5.0"
+    "tag": "v1.6.0"
   },
   "platforms": {
     "ios": "7.0"
@@ -34,6 +34,5 @@
     "source_files": "ios/KlarnaCheckout.framework/Headers/*.h",
     "resources": "ios/KlarnaCheckout.framework/Resources/**/*",
     "vendored_frameworks": "ios/KlarnaCheckout.framework"
-  },
-  "weak_frameworks": "SafariServices"
+  }
 }
