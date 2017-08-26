@@ -21,7 +21,6 @@
     "cordova-ios",
     "cordova-android"
   ],
-  "author": "Marat Dyatko <marat.dyatko@klarna.com>",
   "license": "Apache 2.0",
   "bugs": {
     "url": "https://github.com/klarna/kco-mobile-sdk/issues"

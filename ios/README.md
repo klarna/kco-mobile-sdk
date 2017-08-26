@@ -105,7 +105,9 @@ UIViewController<KCOCheckoutViewController> *viewController = [checkout checkout
 
 If you want to integrate it in your own native checkout flow, you can add the checkoutViewController as a childViewController and handle resize events for the checkout.
 
-First you need to disable internal scrolling and suply a sizing delegate implementing ```<KCOEmbeddableCheckoutSizingDelegate>```. This will make the viewcontroller fill its internal scrollview to its parent, with no scrolling. Now you are responsible for making the checkout view as big as it needs to be.
+First you need to disable internal scrolling and suply a sizing delegate implementing ```<KCOEmbeddableCheckoutSizingDelegate>```. 
+This will make the viewcontroller fill its internal scrollview to its parent, with no scrolling. 
+Now you are responsible for making the checkout view as big as it needs to be.
 
 ```objective-c
 viewController.internalScrollDisabled = YES;
@@ -124,6 +126,8 @@ You need to implement the resize method. In the resize event it is up to you how
 
 #### Redirect URI
 
-Some payment methods require auhtoriziation through third party applications. These can return to your application upon completion, but to do that you need to supply a url that should be used for returning. There does not need to be any special handlers on application load for that url, just that the application will load from that url.
+Some payment methods require auhtoriziation through third party applications. These can return to your application upon completion,
+but to do that you need to supply a url that should be used for returning.
+There does not need to be any special handlers on application load for that url, just that the application will load from that url.
 
 for example you can supply a url like: ```my-schema:return.url``` and add the my-schema protocol to your info plist file.

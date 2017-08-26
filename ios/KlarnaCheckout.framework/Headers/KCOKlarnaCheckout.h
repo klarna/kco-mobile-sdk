@@ -33,23 +33,15 @@
 @property (nonatomic, readonly) UIViewController<KCOCheckoutViewControllerProtocol> *checkoutViewController;
 
 /**
- *  We will keep a week reference to the view controller.
- *  @note This initializer will call initWithViewController:redirectURI: with redirectURI as nil
- *  @param viewController The viewcontroller that will be presenting this checkout.
- *  @see initWithViewController:redirectURI:
- */
-- (instancetype)initWithViewController:(UIViewController *)viewController;
-
-/**
  *  Designated initializer.
  *
  *  @param viewController The view controller that will contain the checkout.
- *  @param redirectURI  A uri to be used for third party applications, to be able to return to your application.
+ *  @param returnURL  A uri to be used for third party applications, to be able to return to your application.
  *  It should be a url that you are subscribing to in your info plist, with a protocol that should
  *  be unique for your application.
  *  @returns A KCOKlarnaCheckout object that can be used in the context of the view controller.
  */
-- (instancetype)initWithViewController:(UIViewController *)viewController redirectURI:(NSURL *)redirectURI;
+- (instancetype)initWithViewController:(UIViewController *)viewController returnURL:(NSURL *)returnURL;
 
 /**
  *  Html snippet containing to start the Klarna checkout.
@@ -92,7 +84,7 @@
  *  for the new view controller.
  *  @see setWebView:
  *  @see setSnippet:
- *  @see initWithViewController:redirectURI:
+ *  @see initWithViewController:returnURL:
  */
 - (void)destroy;
 

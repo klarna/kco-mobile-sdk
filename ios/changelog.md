@@ -1,6 +1,25 @@
 
 # Changelog 
 
+## 1.6.0
+
+Minor internal optimizations
+
+Support for custom intent based banking apps. 
+Set minimal SDK support to iOS 8.0 
+
+Removed the optional argument for initWithViewController
+since return url is not mandatory: 
+
+```objective c
+
+- (instancetype)initWithViewController:(UIViewController *)viewController;
+
+```
+No longer a valid option.
+
+
+
 ## 1.5
 
 Fix SDK bugs on iOS 10
