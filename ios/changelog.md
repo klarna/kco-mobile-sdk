@@ -3,7 +3,8 @@
 
 ## 1.6.0
 
-Minor internal optimizations
+Minor internal optimizations. 
+The external cocoa pods distro and dependancy name is KlarnaCheckoutSDK
 
 Support for custom intent based banking apps. 
 Set minimal SDK support to iOS 8.0 

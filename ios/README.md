@@ -7,7 +7,7 @@
 The simplest way to add the framework is to use cocoapods and specify the podspec supplied.
 
 ```
-pod 'KlarnaCheckout'
+pod 'KlarnaCheckoutSDK'
 ```
 
 Alternatively you can add the framework manually. Remember to link the required frameworks as well.
