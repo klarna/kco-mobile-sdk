@@ -40,7 +40,7 @@ To correctly set up the checkout flow you must notify the checkout that the view
 ```objective-c
 - (void)viewDidLoad {
     [super viewDidLoad];
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotification:) name:KCOSignalNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotification:) name:KCOSignalNotification object:nil];
     [self.checkout notifyViewDidLoad];
 }
 ```
@@ -54,19 +54,19 @@ To make sure the checkout shows the succesful screen you need to redirect your w
 ```objective-c
 - (void)handleNotification:(NSNotification *)notification
 {
-	NSString *name = notification.userInfo[KCOSignalNameKey];
-	NSDictionary *data = notification.userInfo[KCOSignalDataKey];
+    NSString *name = notification.userInfo[KCOSignalNameKey];
+    NSDictionary *data = notification.userInfo[KCOSignalDataKey];
 
-	if ([name isEqualToString:@"complete"]) {
-		[self handleCompletionUri:[data objectForKey:@"uri"]];
-	}
+    if ([name isEqualToString:@"complete"]) {
+        [self handleCompletionUri:[data objectForKey:@"uri"]];
+    }
 }
 
 - (void)handleCompletionUri:(NSString *)uri{
-	if (uri && [uri isKindOfClass:[NSString class]] && uri.length > 0) {
-		NSURL *url = [NSURL URLWithString:uri];
-		[self.webView loadRequest:[NSURLRequest requestWithURL:url]];
-	}
+    if (uri && [uri isKindOfClass:[NSString class]] && uri.length > 0) {
+        NSURL *url = [NSURL URLWithString:uri];
+        [self.webView loadRequest:[NSURLRequest requestWithURL:url]];
+    }
 }
 ```
 
@@ -75,11 +75,11 @@ Handling the completion uri could look something like this:
 
 ```
 - (void)handleCompletionUri:(NSString *)uri{
-	if (uri && [uri isKindOfClass:[NSString class]] && uri.length > 0) {
-		NSURL *url = [NSURL URLWithString:uri];
-		[self.checkout attachWebView:self.confirmationWebView];
-		[self.confirmationWebView loadRequest:[NSURLRequest requestWithURL:url]];
-	}
+    if (uri && [uri isKindOfClass:[NSString class]] && uri.length > 0) {
+        NSURL *url = [NSURL URLWithString:uri];
+        [self.checkout attachWebView:self.confirmationWebView];
+        [self.confirmationWebView loadRequest:[NSURLRequest requestWithURL:url]];   
+        }
 }
 ```
 

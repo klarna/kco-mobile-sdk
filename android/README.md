@@ -61,7 +61,7 @@
            </activity>
 
 ```
-   
+3.    
 
 
 #### Resynch project
@@ -73,7 +73,7 @@ Synch your project with the gradle files
 #### Standard checkout initialization:
 
 ```java
-KlarnaCheckout checkout = new KlarnaCheckout(myCurrentActivity);
+KlarnaCheckout checkout = new KlarnaCheckout(myCurrentActivity, returnUrl);
 checkout.setSnippet(/* ..the html snippet from merchant server.. */);
 checkout.setSignalListener(/* ..an implementation of the SignalListener interface.. */);
 View checkoutView = checkout.getView();
@@ -84,9 +84,19 @@ _(the returned view can then be placed in layout placeholder or fragment as requ
 #### "Hybrid" checkout initialization:
 
 ```java
-KlarnaCheckout checkout = new KlarnaCheckout(myCurrentActivity);
+KlarnaCheckout checkout = new KlarnaCheckout(myCurrentActivity, returnUrl);
 checkout.setWebView(myWebView);
 checkout.setSignalListener(/* ..an implementation of the SignalListener interface.. */);
 ```
 _("myWebView" is a WebView instance that has loaded a web page which already contains the checkout code snippet)_
 
+
+
+### "Return url"
+
+The return url should match the custom web app URL scheme. 
+This is needed in order for the SDK to be able to return back 
+to the original app in cases where we open external browser. 
+
+Ex: 
+```merchant-app-scheme://klarna-checkout```
