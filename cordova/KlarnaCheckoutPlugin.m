@@ -12,7 +12,7 @@
 @implementation KlarnaCheckoutPlugin
 
 -(void)pluginInitialize {
-    self.checkout = [[KCOKlarnaCheckout alloc] initWithViewController:self.viewController];
+    self.checkout = [[KCOKlarnaCheckout alloc] initWithViewController:self.viewController "redirect URL"];
     [self.checkout notifyViewDidLoad];
     [self.checkout setWebView:self.webView];
 }

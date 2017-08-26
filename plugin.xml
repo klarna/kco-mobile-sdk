@@ -3,7 +3,7 @@
     xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="kco-mobile-sdk"
-    version="1.5.0">
+    version="1.6.0">
     <name>KlarnaCheckout</name>
     <description>Simple integration of Klarna Checkout into hybrid Cordova-based iOS and Android apps</description>
     <license>Apache 2.0</license>

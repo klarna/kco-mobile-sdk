@@ -47,8 +47,22 @@
 ```
 
 2. Add the BrowserActivity reference to your application context in the manifest
+```xml
+     <activity
+               android:name=".MyCheckoutActivity"
+               android:launchMode="singleTask">
+               <intent-filter>
+                   <action android:name="android.intent.action.VIEW" />
+                   <category android:name="android.intent.category.DEFAULT" />
+                   <category android:name="android.intent.category.BROWSABLE" />
+                   <data android:scheme="merchant-app-scheme" />
+                   <data android:host="klarna-checkout" />
+               </intent-filter>
+           </activity>
 
-    <activity android:name="com.klarna.checkout.sdk.browser.BrowserActivity" />
+```
+   
+
 
 #### Resynch project
 

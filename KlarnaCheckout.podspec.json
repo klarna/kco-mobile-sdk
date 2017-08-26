@@ -1,6 +1,6 @@
 {
   "name": "KlarnaCheckout",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "summary": "Klarna Checkout iOS SDK",
   "license": "Apache License, Version 2.0",
   "homepage": "https://github.com/klarna/kco-mobile-sdk",
