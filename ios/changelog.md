@@ -1,16 +1,17 @@
 
-# Changelog 
+# Changelog
+
+## 1.6.1
+
+- SDK bugfixes on iOS
 
 ## 1.6.0
 
-Minor internal optimizations. 
-The external cocoa pods distro and dependancy name is KlarnaCheckoutSDK
-
-Support for custom intent based banking apps. 
-Set minimal SDK support to iOS 8.0 
-
-Removed the optional argument for initWithViewController
-since return url is not mandatory: 
+- Minor internal optimizations.
+- The external CocoaPods distro and dependency name is now KlarnaCheckoutSDK.
+- Set minimal SDK support to iOS 8.0
+- Support for custom intent based banking apps.
+- Removed the optional argument for initWithViewController since return url is not mandatory:
 
 ```objective c
 
@@ -20,25 +21,24 @@ since return url is not mandatory:
 No longer a valid option.
 
 
-
 ## 1.5
 
-Fix SDK bugs on iOS 10
+- Fixed SDK bugs on iOS 10
 
 ## 1.4
 
-### Removed KCOCheckoutController 
+### Removed KCOCheckoutController
 
-To unify the external api with the android release we removed the KCOCheckoutController, and moved the accesspoints to the KCOKlarnaCheckout.
+To unify the external API with the Android release, we removed the `KCOCheckoutController` and moved the access points to the `KCOKlarnaCheckout`.
 
-If you want to create a checkout for your already existing webview, previously you would create a KCOCheckoutController, and attach the webview.
+If you want to create a checkout for your already existing webview, previously you would create a `KCOCheckoutController`, and attach the webview.
 
 ```objective-c
 self.checkout = [[KCOCheckoutController alloc] initWithViewController:self];
 [self.checkout attachWebView:self.webview];
 ```
 
-This accesspoints are moved to the ```KCOKlarnaCheckout``` and renamed ```attachWebView:``` to ```setWebView:```
+This accesspoints are moved to the `KCOKlarnaCheckout` and renamed `attachWebView:` to `setWebView:`
 
 ```objective-c
 self.checkout = [[KCOKlarnaCheckout alloc] initWithViewController:self];
@@ -47,7 +47,7 @@ self.checkout = [[KCOKlarnaCheckout alloc] initWithViewController:self];
 
 ### Always require a view controller
 
-If you want to create a checkout with a snippet loaded from your server, previously you would create a ```KCOKlarnaCheckout``` and set the snippet.
+If you want to create a checkout with a snippet loaded from your server, previously you would create a `KCOKlarnaCheckout` and set the snippet.
 
 ```objective-c
 KCOKlarnaCheckout *checkout = [[KCOKlarnaCheckout alloc] init];
@@ -63,7 +63,7 @@ checkout.snippet = snippet;
 
 ### Added redirectURI
 
-To allow for thirdparty applications to return to your application, in case of third party authenticators or similar, you can supply a redirectURI, which you should handle as a normal iOS remote URL.
+To allow for third-party applications to return to your application, in case of third party authenticators or similar, you can now supply a redirectURI, which you should handle as a normal iOS remote URL.
 
 ```objective-c
 // hybrid webview
@@ -75,7 +75,7 @@ self.checkout = [[KCOKlarnaCheckout alloc] initWithViewController:self redirectU
 checkout.snippet = snippet;
 ```
 
-This url should be of your custom app schema which you implement in your info-plist file. You should not need to handle the calling of this URL in any special way, simply make sure the application will open for that schema.
+This URL should be of your custom app schema which you implement in your info-plist file. You should not need to handle the calling of this URL in any special way, simply make sure the application will open for that schema.
 
 ### Refactored Signals
 
@@ -105,7 +105,7 @@ Previously you would fetch a list of arguments for the signals, and cast the fir
 }
 ```
 
-The new implementation will simply become this. 
+The new implementation will simply become this.
 
 ```objective-c
 - (void)handleNotification:(NSNotification *)notification
@@ -128,11 +128,13 @@ The new implementation will simply become this.
 
 ### Parent scrollview
 
-To further unify with the Android sdk we change the parentScrollViewForCheckoutViewController: method to a property on the ```UIViewController<KCOCheckoutViewController>``` object returned from the ```checkoutViewController``` method. So if you want to add a checkout to a native flow, you set the parentScrollView.
+To further unify with the Android SDK, we changed the `parentScrollViewForCheckoutViewController:` method to a property on
+the `UIViewController<KCOCheckoutViewController>` object returned from the `checkoutViewController` method. So if you
+want to add a checkout to a native flow, you should set the `parentScrollView`.
 
-So where you would previously implement the KCOEmbeddableCheckoutSizingDelegate methods
+So where you would previously implement the `KCOEmbeddableCheckoutSizingDelegate` methods
 
-```
+```objective-c
 #pragma mark - KCOEmbeddableCheckoutSizingDelegate
 - (UIScrollView *)parentScrollViewForCheckoutViewController:(id)checkout
 {
@@ -143,7 +145,7 @@ So where you would previously implement the KCOEmbeddableCheckoutSizingDelegate 
 
 You would now instead just set the parentScrollView.
 
-```
+```objective-c
 viewController.parentScrollView = self.scrollView;
 ```
 
