@@ -1,13 +1,18 @@
 
 # Changelog
 
+## 1.6.2
+
+- Bugfixes and stability improvements on iOS.
+- Modulemap renamed to KlarnaCheckoutSDK, should import correctly in Swft projects.
+
 ## 1.6.1
 
-- SDK bugfixes on iOS
+- Bugfixes and stability improvements on iOS.
 
 ## 1.6.0
 
-- Minor internal optimizations.
+- Bugfixes and stability improvements on iOS.
 - The external CocoaPods distro and dependency name is now KlarnaCheckoutSDK.
 - Set minimal SDK support to iOS 8.0
 - Support for custom intent based banking apps.
@@ -23,7 +28,7 @@ No longer a valid option.
 
 ## 1.5
 
-- Fixed SDK bugs on iOS 10
+- Fixed SDK bugs on iOS 10.
 
 ## 1.4
 
