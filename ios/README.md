@@ -37,7 +37,7 @@ To add the checkout in your native flow, you supply a snippet which you retrieve
 
 First, you create a `KCOKlarnaCheckout` and set the html snippet:
 ```objective-c
-self.checkout = [[KCOKlarnaCheckout alloc] initWithViewController:self redirectURI:<YOUR-URL>];
+self.checkout = [[KCOKlarnaCheckout alloc] initWithViewController:self returnURL:<YOUR-URL>];
 checkout.snippet = snippet;
 ```
 
@@ -90,7 +90,7 @@ This insures that the fullscreen loading view disappears and the user sees impor
 
 ### Hybrid Mode
 
-#### <span style="color:#e00">Important!</span>
+####  ❗️️️ ❗️️️ Important ❗️️️ ❗️️️
 
 Please note that this mode will will be deprecated in the future. If you are currently using Hybrid mode, please migrate from Hybrid mode as soon as possible. If you can't, don't hesitate to contact us and we'll investigate a solution that will work with your integration needs.
 
@@ -99,8 +99,8 @@ Please note that this mode will will be deprecated in the future. If you are cur
 If you are using the Klarna Checkout in a web view by loading your Checkout URL (or by loading another URL that contains the checkout snippet), you instantiate `KCOKlarnaCheckout` in the same way as before, but you instead attach your web view.
 
 ```objective-c
-self.checkout = [[KCOKlarnaCheckout alloc] initWithViewController:self redirectURI:<YOUR-URL>];
-[self.checkout attachWebView:self.webview];
+self.checkout = [[KCOKlarnaCheckout alloc] initWithViewController:self returnURL:<YOUR-URL>];
+[self.checkout setWebView:self.webview];
 ```
 
 The SDK will handle the checkout flow and return signals on certain events. The SDK will keep a weak reference of the view controller and we will never override the web view delegate, so you can keep using the web view as normal.
