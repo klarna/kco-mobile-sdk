@@ -5,7 +5,7 @@ native or hybrid iOS and Android applications.
 It's aimed to make integration simple and provide the smoothest in-app purchase experience.
 
 ## iOS
-[![CocoaPods](https://img.shields.io/badge/cocoapods-v1.6.1-blue.svg?style=flat)](https://cocoapods.org/pods/KlarnaCheckoutSDK)
+[![CocoaPods](https://img.shields.io/badge/cocoapods-v1.6.2-blue.svg?style=flat)](https://cocoapods.org/pods/KlarnaCheckoutSDK)
 [![CocoaPods](https://img.shields.io/badge/platform-ios-999999.svg?style=flat)](https://cocoapods.org/pods/KlarnaCheckoutSDK)
 [![License](https://img.shields.io/badge/license-MIT-333333.svg?style=flat)](https://github.com/klarna/kco-mobile-sdk/blob/master/LICENSE)
 
