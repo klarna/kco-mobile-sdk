@@ -1,102 +1,159 @@
-# Klarna Checkout Android SDK
+# Android Integration
 
-## SDK Integration
+## Project Setup
 
-### Setup
-#### Adding the library locally
+The Payments SDK is available on our Maven Repository, perform the following steps to add it to your application:
 
-1. Create a folder in your application module named _"libs"_
+1. Edit your application level `build.gradle` file and add the following repository to your `repositories` section:
 
-    [Project]/app/libs
-
-2. Copy the _klarna-checkout-sdk-[version].aar_ to the libs folder
-
-3. Edit your application level build.gradle file and add the following section (after the _android scope_):
-
-```gradle
+    ```gradle
     repositories {
-        flatDir {
-            dirs 'libs'
+        ....
+        maven {
+            url 'https://x.klarnacdn.net/mobile-sdk/'
         }
     }
-```
+    ```
 
-4. Add a compile dependency for the library:
+2. Add a `implementation` dependency for the library:
 
-```gradle
-    compile (name: 'klarna-checkout', ext: 'aar')
-```
+    ```gradle
+    implementation ('com.klarna.checkout:sdk:<latest version>')
+    ```
+    
+    Note: Latest version is 1.6.8, so it'd be:
+    ```gradle
+    implementation 'com.klarna.checkout:sdk:1.6.8'
+    ```
 
-#### Update your application manifest
+3. Register an `intent-filter` for the `Activity` which will be hosting the checkout in your `AndroidManifest.xml` to support return URLs:
 
-1. Add permissions
+    ```xml
+    <intent-filter>
+        <action android:name="android.intent.action.VIEW" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <category android:name="android.intent.category.BROWSABLE" />
+
+        <data android:scheme="<your-custom-scheme>" />
+        <data android:host="<your-custom-host>" />
+    </intent-filter>
+    ```
+
+
+### Note:
+
+The hosting `Activity` should be using `launchMode` of `singleTask` or `singleTop` to prevent a new instance from being created when returning from an external application.
 
 ```xml
-    <!-- Standard persmissions required by the SDK -->
-    <permission android:name="android.permission.INTERNET" />
-    <permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
-    <!-- OPTIONAL: Permissions required if using GCM -->
-    <!-- permission android:name="android.permission.WAKE_LOCK" / -->
-    <!-- permission android:name="com.google.android.c2dm.permission.RECEIVE" / -->
-
-    <!-- OPTIONAL: Permissions required for Cellular switch on Android 5+ -->
-    <!-- permission android:name="android.permission.ACCESS_NETWORK_STATE" / -->
-    <!-- permission android:name="android.permission.CHANGE_NETWORK_STATE" / -->
-    <!-- permission android:name="android.permission.CHANGE_WIFI_STATE" / -->
+<activity
+    android:launchMode="singleTask|singleTop">
 ```
 
-2. Add the BrowserActivity reference to your application context in the manifest
-```xml
-     <activity
-               android:name=".MyCheckoutActivity"
-               android:launchMode="singleTask">
-               <intent-filter>
-                   <action android:name="android.intent.action.VIEW" />
-                   <category android:name="android.intent.category.DEFAULT" />
-                   <category android:name="android.intent.category.BROWSABLE" />
-                   <data android:scheme="merchant-app-scheme" />
-                   <data android:host="klarna-checkout" />
-               </intent-filter>
-           </activity>
+## Integration
+The SDK allows developers to integrate a Checkout into their applications in several ways. When you create an order through Klarna's Checkout API, you are provided with an HTML snippet to render Klarna Checkout.
 
-```
-3.    
+We offer two ways applications may present Klarna Checkout:
+
+- Native: You provide the SDK with the HTML snippet. The SDK returns a Checkout view that you can present either as a full standalone view or embedded into your application.
+
+- Hybrid: You load the snippet into a Web View and provide the SDK with a reference to it. The SDK then manages the checkout flow while you manage the Web View. This may be useful if you wish to render additional HTML around the checkout view. 
+
+If needed, you can read the Klarna's Checkout Integration guide [here](https://developers.klarna.com/en/se/kco-v3/checkout/1-prepare-your-site-for-klarna-checkout).
 
 
-#### Resynch project
+### Native Mode
 
-Synch your project with the gradle files
+#### Initialization
 
-### Primary checkout object for merchant integration.
-
-#### Standard checkout initialization:
+To add a checkout, create an instance of `KlarnaCheckout` and supply the snippet which you retrieved through the Klarna's API.
 
 ```java
-KlarnaCheckout checkout = new KlarnaCheckout(myCurrentActivity, returnUrl);
-checkout.setSnippet(/* ..the html snippet from merchant server.. */);
-checkout.setSignalListener(/* ..an implementation of the SignalListener interface.. */);
-View checkoutView = checkout.getView();
+final KlarnaCheckout checkout = new KlarnaCheckout(this, returnURL);
+checkout.setSnippet(snippet);
 ```
 
-_(the returned view can then be placed in layout placeholder or fragment as required)_
+Setting the snippet will start preloading the checkout, which ensures a better experience for the users.
+The `returnURL` should match the custom web app URL scheme as defined in your `AndroidManifest.xml`.
 
-#### "Hybrid" checkout initialization:
+### Presenting the Checkout View
+
+To display the checkout, simply retrieve an instance of the checkout view and place it in a `ViewGroup` of choice.
 
 ```java
-KlarnaCheckout checkout = new KlarnaCheckout(myCurrentActivity, returnUrl);
+final View checkoutView = checkout.getView();
+final ViewGroup container = findViewById(R.id.checkoutContainer);
+container.addView(checkoutView);
+```
+
+### Configure Signalling
+
+The SDK will signal your application throughout the checkout process via a `SignalListener`.
+The only event you need to listen to is the `complete` event. When the complete event is triggered, redirect the customer to the confirmation page within your app.
+
+```java
+checkout.setSignalListener(new SignalListener() {  
+    @Override  
+    public void onSignal(String eventName, JSONObject jsonObject) {  
+        if (eventName.equals("complete")) {  
+            try {  
+                final String confirmationURL = jsonObject.getString("uri");  
+                loadConfirmationSnippet(confirmationURL);
+            } catch (JSONException e) {  
+                Log.e(TAG, e.getMessage(), e);  
+            }  
+        }  
+    }  
+);
+```
+
+Optionally, you may want to set up the listener to track field changes in the Klarna Checkout before the order is placed. See the reference guide for what events are available.
+
+## Hybrid Mode
+
+#### ❗️❗️Important ❗️❗️
+Please note that this mode will will be deprecated in the future. If you are currently using Hybrid mode, please migrate from Hybrid mode as soon as possible. If you can't, don't hesitate to contact us and we'll investigate a solution that will work with your integration needs.
+
+### Initialization
+
+To add a checkout, create an instance of the `KlarnaCheckout` and supply it with the `WebView` in which the checkout should be rendered.
+
+```java
+final KlarnaCheckout checkout = new KlarnaCheckout(this, returnURL);
 checkout.setWebView(myWebView);
-checkout.setSignalListener(/* ..an implementation of the SignalListener interface.. */);
 ```
-_("myWebView" is a WebView instance that has loaded a web page which already contains the checkout code snippet)_
 
+### Presenting Checkout
+From your WebView, load the URL to the web page where you have integrated Klarna Checkout. The Checkout SDK will automatically run when it detects the Checkout snippet in the Web View:
 
+```java
+myWebView.loadUrl("https://www.example.store/checkout");
+```
 
-### "Return url"
+### Configure Signalling
 
-The return url should match the custom web app URL scheme. 
-This is needed in order for the SDK to be able to return back 
-to the original app in cases where we open external browser. 
+The SDK will signal your application throughout the checkout process via a `SignalListener`.
+The only event you need to listen to is the `complete` event. When the complete event is triggered, redirect the customer to the confirmation page within your app.
 
-Ex: 
-```merchant-app-scheme://klarna-checkout```
+```java
+checkout.setSignalListener(new SignalListener() {  
+    @Override  
+    public void onSignal(String eventName, JSONObject jsonObject) {  
+        if (eventName.equals("complete")) {  
+            try {  
+                final String confirmationURL = jsonObject.getString("uri");  
+                myWebView.loadUrl(confirmationURL);
+            } catch (JSONException e) {  
+                Log.e(TAG, e.getMessage(), e);  
+            }  
+        }  
+    }  
+ );
+```
+
+Optionally, you may want to set up the listener to track field changes in the Klarna Checkout before the order is placed. See the reference guide for what events are available.
+
+## Cleanup
+When you are done with the checkout, make sure to call `destroy()` to release resources.
+```java
+checkout.destroy();
+```
