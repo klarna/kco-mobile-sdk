@@ -23,4 +23,4 @@ pod 'KlarnaCheckoutSDK'
 
 ##### [Usage](android/README.md) | [Documentation](https://rawgit.com/klarna/kco-mobile-sdk/master/android/docs/index.html) | [Example app](https://github.com/klarna/kco-android-example-app)
 
-
+Note: Please upgrade to the latest version (1.6.8 or above) if you experience crashes on Android 9.0 or later.
