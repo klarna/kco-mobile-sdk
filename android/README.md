@@ -17,13 +17,25 @@ The Payments SDK is available on our Maven Repository, perform the following ste
 
 2. Add a `implementation` dependency for the library:
 
+    ##### For projects already migrated to AndroidX
     ```gradle
     implementation ('com.klarna.checkout:sdk:<latest version>')
     ```
-    
-    Note: Latest version is 1.6.8, so it'd be:
+  
+    Note: Latest version is 1.6.9, so it'd be:
     ```gradle
-    implementation 'com.klarna.checkout:sdk:1.6.8'
+    implementation 'com.klarna.checkout:sdk:1.6.9'
+    ```
+
+    ##### For projects using Support Library
+    
+    ```gradle
+    implementation ('com.klarna.checkout:sdk:<latest version>-support')
+    ```
+   
+    Note: Latest version is 1.6.9, so it'd be:
+    ```gradle
+    implementation 'com.klarna.checkout:sdk:1.6.9-support'
     ```
 
 3. Register an `intent-filter` for the `Activity` which will be hosting the checkout in your `AndroidManifest.xml` to support return URLs:
