@@ -1,11 +1,3 @@
-//
-//  KCOCheckoutSizingDelegate.h
-//  Pods
-//
-//  Created by Johan Rydenstam on 11/11/15.
-//
-//
-
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
