@@ -22,9 +22,9 @@ The Payments SDK is available on our Maven Repository, perform the following ste
     implementation ('com.klarna.checkout:sdk:<latest version>')
     ```
   
-    Note: Latest version is 1.6.9, so it'd be:
+    Note: Latest version is 1.6.10, so it'd be:
     ```gradle
-    implementation 'com.klarna.checkout:sdk:1.6.9'
+    implementation 'com.klarna.checkout:sdk:1.6.10'
     ```
 
     ##### For projects using Support Library
@@ -33,9 +33,9 @@ The Payments SDK is available on our Maven Repository, perform the following ste
     implementation ('com.klarna.checkout:sdk:<latest version>-support')
     ```
    
-    Note: Latest version is 1.6.9, so it'd be:
+    Note: Latest version is 1.6.10, so it'd be:
     ```gradle
-    implementation 'com.klarna.checkout:sdk:1.6.9-support'
+    implementation 'com.klarna.checkout:sdk:1.6.10-support'
     ```
 
 3. Register an `intent-filter` for the `Activity` which will be hosting the checkout in your `AndroidManifest.xml` to support return URLs:
