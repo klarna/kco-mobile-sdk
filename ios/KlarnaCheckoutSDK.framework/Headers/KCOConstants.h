@@ -1,11 +1,3 @@
-//
-//  KCOConstants.h
-//  Pods
-//
-//  Created by Johan Rydenstam on 25/11/15.
-//
-//
-
 #import <Foundation/Foundation.h>
 
 /**
