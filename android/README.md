@@ -89,7 +89,7 @@ The `returnURL` should match the custom web app URL scheme as defined in your `A
 
 ### Presenting the Checkout View
 
-To display the checkout, simply retrieve an instance of the checkout view and place it in a `ViewGroup` of choice.
+To display the checkout, simply retrieve an instance of the checkout view and place it in a `ViewGroup` of choice. However, try to avoid placing it in a `ScrollView` as this might introduce strange bugs.
 
 ```java
 final View checkoutView = checkout.getView();
