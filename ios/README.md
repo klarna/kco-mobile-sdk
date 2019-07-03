@@ -184,6 +184,7 @@ The SDK will signal your application when the order is complete through an `NSNo
     }
 }
 ```
+For a full list of all the signals see the [Checkout JavaScript API](https://developers.klarna.com/documentation/klarna-checkout/javascript-api/#checkout-events).
 
 ### Redirect URI
 
