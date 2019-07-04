@@ -89,12 +89,36 @@ The `returnURL` should match the custom web app URL scheme as defined in your `A
 
 ### Presenting the Checkout View
 
-To display the checkout, simply retrieve an instance of the checkout view and place it in a `ViewGroup` of choice. However, try to avoid placing it in a `ScrollView` as this might introduce strange bugs.
+To display the checkout, simply retrieve an instance of the checkout view and place it in a `ViewGroup` of choice, e.g. `FrameLayout`. Please note that the checkout view itself will not be scrollable and you need to have a `ScrollView` somewhere in the parent hierarchy to enable scrolling.
 
 ```java
 final View checkoutView = checkout.getView();
 final ViewGroup container = findViewById(R.id.checkoutContainer);
 container.addView(checkoutView);
+```
+
+After adding the checkout container to your layout it could look something like this.
+```xml
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    
+        <!--...-->
+    
+        <FrameLayout
+             android:id="@+id/checkoutContainer"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent" />
+        
+        <!--...-->
+        
+    </LinearLayout>
+</ScrollView>
 ```
 
 ### Configure Signalling
