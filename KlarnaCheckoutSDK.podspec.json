@@ -20,7 +20,7 @@
   "ios": {
     "source_files": "ios/KlarnaCheckoutSDK.framework/Headers/*.h",
     "public_header_files": "ios/KlarnaCheckoutSDK.framework/Headers/*.h",
-    "resources": "ios/KlarnaCheckoutSDK.framework/Resources/*.bundle",
+    "resources": "ios/KlarnaCheckoutSDK.framework/*.bundle",
     "vendored_frameworks": "ios/KlarnaCheckoutSDK.framework"
   }
 }
