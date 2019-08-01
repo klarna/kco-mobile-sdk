@@ -1,30 +1,20 @@
 {
   "name": "KlarnaCheckoutSDK",
-  "version": "1.6.5",
+  "version": "1.6.6",
   "summary": "Klarna Checkout iOS SDK",
-  "description": "Simple integration of Klarna Checkout into native and hybrid iOS apps",
+  "description": "Simple integration of Klarna Checkout for native and hybrid iOS apps.",
   "homepage": "https://github.com/klarna/kco-mobile-sdk",
   "authors": {
-    "Klarna Team Undefined": "mobile.sdk@klarna.com"
+    "Klarna's In-App Team": "mobile.sdk@klarna.com"
   },
   "license": "Apache License, Version 2.0",
   "source": {
     "git": "https://github.com/klarna/kco-mobile-sdk.git",
-    "tag": "v1.6.5"
+    "tag": "v1.6.6"
   },
   "requires_arc": true,
-  "platforms": {
-    "ios": "8.0"
-  },
-  "frameworks": [
-    "UIKit",
-    "WebKit",
-    "Security",
-    "CFNetwork",
-    "MobileCoreServices",
-    "SystemConfiguration",
-    "JavaScriptCore"
-  ],
+  "platforms": { "ios": "8.0" },
+  "frameworks": [ "UIKit", "WebKit", "Security", "CFNetwork", "MobileCoreServices", "SystemConfiguration", "JavaScriptCore" ],
   "weak_frameworks": "SafariServices",
   "libraries": "z",
   "ios": {
