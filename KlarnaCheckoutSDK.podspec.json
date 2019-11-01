@@ -13,8 +13,18 @@
         "tag": "v1.6.7"
     },
     "requires_arc": true,
-    "platforms": { "ios": "8.0" },
-    "frameworks": ["UIKit", "WebKit", "Security", "CFNetwork", "MobileCoreServices", "SystemConfiguration", "JavaScriptCore"],
+    "platforms": {
+        "ios": "8.0"
+    },
+    "frameworks": [
+        "UIKit",
+        "WebKit",
+        "Security",
+        "CFNetwork",
+        "MobileCoreServices",
+        "SystemConfiguration",
+        "JavaScriptCore"
+    ],
     "weak_frameworks": "SafariServices",
     "libraries": "z",
     "ios": {
