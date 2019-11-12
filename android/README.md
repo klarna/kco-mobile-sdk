@@ -22,21 +22,22 @@ The Payments SDK is available on our Maven Repository, perform the following ste
     implementation ('com.klarna.checkout:sdk:<latest version>')
     ```
   
-    Note: Latest version is 1.6.11, so it'd be:
-    ```gradle
-    implementation 'com.klarna.checkout:sdk:1.6.11'
-    ```
-
+    >**Note**: If you were to use 1.0.0 it would look like:
+    >```gradle
+    >implementation 'com.klarna.checkout:sdk:1.0.0'
+    >```
+    >The latest version is [![Maven](https://img.shields.io/maven-metadata/v/https/x.klarnacdn.net/mobile-sdk/com/klarna/checkout/sdk/maven-metadata.xml.svg)](https://github.com/klarna/kco-mobile-sdk/blob/master/android/README.md)
     ##### For projects using Support Library
     
     ```gradle
     implementation ('com.klarna.checkout:sdk:<latest version>-support')
     ```
    
-    Note: Latest version is 1.6.11, so it'd be:
-    ```gradle
-    implementation 'com.klarna.checkout:sdk:1.6.11-support'
-    ```
+    >**Note**: If you were to use 1.0.0 it would look like:
+    >```gradle
+    >implementation 'com.klarna.checkout:sdk:1.0.0-support'
+    >```
+    >The latest version is [![Maven](https://img.shields.io/maven-metadata/v/https/x.klarnacdn.net/mobile-sdk/com/klarna/checkout/sdk/maven-metadata.xml.svg)](https://github.com/klarna/kco-mobile-sdk/blob/master/android/README.md)
 
 3. Register an `intent-filter` for the `Activity` which will be hosting the checkout in your `AndroidManifest.xml` to support return URLs:
 
@@ -56,7 +57,7 @@ The Payments SDK is available on our Maven Repository, perform the following ste
 
 The hosting `Activity` should be using `launchMode` of `singleTask` or `singleTop` to prevent a new instance from being created when returning from an external application.
 
-```xml
+```xmlstash
 <activity
     android:launchMode="singleTask|singleTop">
 ```
