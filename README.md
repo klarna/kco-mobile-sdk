@@ -14,9 +14,6 @@ It's aimed to make integration simple and provide the smoothest in-app purchase 
 * iOS 10 or later.
 * Android 4.0 or later.
 
-## Support
-If you are having any issues using the SDK in your project, please create a question on [Stack Overflow](https://stackoverflow.com/questions/tagged/klarna-inapp-sdk) tagged with `klarna-inapp-sdk`. If you think that something is wrong with the SDK itself, please create an issue.
-
 ### Developer Documentation
 * [Klarna Checkout](https://developers.klarna.com/documentation/klarna-checkout/)
 * [Mobile Apps Integrations](https://developers.klarna.com/documentation/klarna-checkout/mobile-apps/)
@@ -113,9 +110,15 @@ implementation 'com.klarna.checkout:sdk:1.x.x'
 >**Note:** Please upgrade to the latest version (1.6.8 or above) if you experience crashes on Android 9.0 or later.
 
 ## Contributing
-Thank you for reading this and taking time to contribute to Klarna Checkout SDK! Below is a set of guidelines to help you contribute whether you want to report a bug, come with suggestions or modify code.
+
+### Support
+
+If you are having any issues using the SDK in your project or if you think that something is wrong with the SDK itself, please create an issue on [Github](https://github.com/klarna/kco-mobile-sdk/issues) or report a bug by following the guidelines in the next section. 
 
 ### How can I contribute?
+
+Thank you for reading this and taking time to contribute to Klarna Checkout SDK! Below is a set of guidelines to help you contribute whether you want to report a bug, come with suggestions or modify code.
+
 #### Reporting Bugs
 This section will guide you through submitting a bug report for Klarna Checkout SDK.
 
