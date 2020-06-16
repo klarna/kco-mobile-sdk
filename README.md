@@ -83,7 +83,7 @@ Or Carthage:
 github "klarna/kco-mobile-sdk"
 ```
 
-##### [Usage](ios/README.md) | [Documentation](https://cocoadocs.org/docsets/KlarnaCheckoutSDK/) | [Example app](https://github.com/klarna/kco-ios-example-app)
+##### [Usage](ios/README.md) | [Documentation](https://cocoapods.org/pods/KlarnaCheckoutSDK/) | [Example app](https://github.com/klarna/kco-ios-example-app)
 
 
 
