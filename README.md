@@ -80,7 +80,7 @@ pod 'KlarnaCheckoutSDK'
 Or Carthage:
 
 ```
-github "klarna/kco-mobile-sdk"
+binary "https://raw.githubusercontent.com/klarna/kco-mobile-sdk/master/KlarnaCheckoutSDK.json"
 ```
 
 ##### [Usage](ios/README.md) | [Documentation](https://cocoapods.org/pods/KlarnaCheckoutSDK/) | [Example app](https://github.com/klarna/kco-ios-example-app)
