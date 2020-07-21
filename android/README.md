@@ -194,3 +194,11 @@ When you are done with the checkout, make sure to call `destroy()` to release re
 ```java
 checkout.destroy();
 ```
+
+## Return URL
+
+Some payment methods require authorization through third-party applications. These can return to your application upon completion, but to do that you need to supply a URL that should be used for returning.
+There do not need to be any special handlers on application load for that URL, our only requirement is that the user is returned to your application from the third-party application.
+
+
+>**Note:** In cases where the user needs to authenticate with their bank for credit card payments, the bank itself might open a third-party app such as Bank ID. Since the SDK does not create these sessions, the user would have to return to the app manually, and then you will get the completion signal from the checkout.

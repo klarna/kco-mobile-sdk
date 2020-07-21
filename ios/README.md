@@ -186,10 +186,12 @@ The SDK will signal your application when the order is complete through an `NSNo
 ```
 For a full list of all the signals see the [Checkout JavaScript API](https://developers.klarna.com/documentation/klarna-checkout/javascript-api/#checkout-events).
 
-### Redirect URI
+### Return URL
 
 Some payment methods require authorization through third-party applications. These can return to your application upon completion, but to do that you need to supply a URL that should be used for returning.
 
-There do not need to be any special handlers on application load for that url, our only requirement is that the user is returned to your application from the third-party application.
+There do not need to be any special handlers on application load for that URL, our only requirement is that the user is returned to your application from the third-party application.
 
 For example, you can supply a url like: `my-schema:return.url` and add the my-schema protocol to your `info.plist` file.
+
+>**Note:** In cases where the user needs to authenticate with their bank for credit card payments, the bank itself might open a third-party app such as Bank ID. Since the SDK does not create these sessions, the user would have to return to the app manually, and then you will get the completion signal from the checkout.
