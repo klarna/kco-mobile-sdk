@@ -1,5 +1,5 @@
 # Klarna Checkout SDK for Mobile Apps
-[![CocoaPods](https://img.shields.io/badge/cocoapods-v1.6.6-blue.svg?style=flat)](https://cocoapods.org/pods/KlarnaCheckoutSDK)
+[![CocoaPods](https://img.shields.io/cocoapods/v/KlarnaCheckoutSDK.svg)](https://cocoapods.org/pods/KlarnaCheckoutSDK)
 [![Maven](https://img.shields.io/maven-metadata/v/https/x.klarnacdn.net/mobile-sdk/com/klarna/checkout/sdk/maven-metadata.xml.svg)](https://github.com/klarna/kco-mobile-sdk/blob/master/android/README.md)
 [![Carthage compatible](https://img.shields.io/badge/carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![License](https://img.shields.io/github/license/klarna/kco-mobile-sdk)](https://github.com/klarna/kco-mobile-sdk/blob/master/LICENSE)
