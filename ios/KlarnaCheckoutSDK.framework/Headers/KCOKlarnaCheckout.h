@@ -25,10 +25,40 @@
 @property (nonatomic, readonly) UIViewController<KCOCheckoutViewControllerProtocol> *checkoutViewController;
 
 /**
+ *Handling External Payment Methods
+ * Feature flag for EPM(External Payment Method) integration, should be set before the checkout
+ * process starts. True means that KCO will not handle external payment methods automatically,
+ * leaving the handling to the merchant.
+ *
+ * @note If the value is false
+ *  External payment methods shall be rendered in the SDK in an in-app browser.
+
+ * @note if the value is true
+ *  External payment methods shall be handled by the merchant. KCO will signal the merchant via the SDK with the external payment method's URL.
+ */
+@property (nonatomic, assign) BOOL merchantHandlesEpm;
+
+/**
+ * Handling Validation Error
+ * Feature flag for checkout validating errors, should be set before the checkout
+ * process starts. True means that KCO will not pop up an error with validation failure message,
+ * leaving the handling to the merchant.
+ *
+ * If the parameter is undefined (e.g. due to using an older version of the SDK) it should be assumed to have a default value of false.
+ *
+ * @note If the value is false
+ *  Validation errors shall be rendered in the SDK in an in-app browser.
+ * @note If the value is true
+ *  Validation errors shall be handled by the merchant. KCO will signal the merchant via the SDK with the failed result of a validation error.
+*/
+@property (nonatomic, assign) BOOL merchantHandlesValidationErrors;
+
+/**
  *  Designated initializer.
  *
  *  @param viewController The view controller that will contain the checkout.
  *  @param returnURL  A uri to be used for third party applications, to be able to return to your application.
+ *
  *  It should be a url that you are subscribing to in your info plist, with a protocol that should
  *  be unique for your application.
  *  @returns A KCOKlarnaCheckout object that can be used in the context of the view controller.
