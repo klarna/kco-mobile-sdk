@@ -15,3 +15,8 @@ Future releases will be documented in this section.
 - Remove _all_ references and any support for UIWebView from the SDK.
 
 ## Android
+
+### [1.6.14] - 2020-08-18
+- Added merchantHandlesEpm for handling external payment methods.
+- Added merchantHandlesValidationErrors for handling validation error.
+- Fixed web content scrolling when nested inside a ScrollView.
