@@ -4,6 +4,10 @@ All notable changes to Checkout Mobile SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [1.6.13] - 2020-10-24
+- Support Xcode 12, Swift 5.3
+- Drop support for Carthage.
+
 ### [1.6.12] - 2020-08-05
 - Added merchantHandlesEpm for handling external payment methods.
 - Added merchantHandlesValidationErrors for handling validation error.
