@@ -32,5 +32,11 @@
         "public_header_files": "ios/KlarnaCheckoutSDK.framework/Headers/*.h",
         "resources": "ios/KlarnaCheckoutSDK.framework/*.bundle",
         "vendored_frameworks": "ios/KlarnaCheckoutSDK.framework"
+    },
+    "pod_target_xcconfig": {
+        "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
+    },
+    "user_target_xcconfig": {
+        "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
     }
 }
