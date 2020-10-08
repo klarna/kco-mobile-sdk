@@ -4,7 +4,11 @@ All notable changes to Checkout Mobile SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
-### [1.6.13] - 2020-10-24
+### [1.6.14] - 2020-10-08
+- KlarnaCheckoutSDK is available as a Swift package.
+- Carthage binary available.
+
+### [1.6.13] - 2020-09-24
 - Support Xcode 12, Swift 5.3
 - Drop support for Carthage.
 

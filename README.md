@@ -77,10 +77,18 @@ iOS SDK is shipped as a framework and can be installed using Cocoapods:
 pod 'KlarnaCheckoutSDK'
 ```
 
-Or Carthage:
+Carthage:
 
 ```
 binary "https://raw.githubusercontent.com/klarna/kco-mobile-sdk/master/KlarnaCheckoutSDK.json"
+```
+
+Swift Package Manager (+Xcode 12):
+
+In Swift Packages, Add the KlarnaCheckoutSDK package repository URL.
+
+```
+https://github.com/klarna/kco-mobile-sdk
 ```
 
 ##### [Usage](ios/README.md) | [Documentation](https://cocoapods.org/pods/KlarnaCheckoutSDK/) | [Example app](https://github.com/klarna/kco-ios-example-app)
