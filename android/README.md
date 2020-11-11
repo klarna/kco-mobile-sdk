@@ -147,9 +147,6 @@ Optionally, you may want to set up the listener to track field changes in the Kl
 
 ## Hybrid Mode
 
-#### ❗️❗️Important ❗️❗️
-Please note that this mode will will be deprecated in the future. If you are currently using Hybrid mode, please migrate from Hybrid mode as soon as possible. If you can't, don't hesitate to contact us and we'll investigate a solution that will work with your integration needs.
-
 ### Initialization
 
 To add a checkout, create an instance of the `KlarnaCheckout` and supply it with the `WebView` in which the checkout should be rendered.

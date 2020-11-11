@@ -90,10 +90,6 @@ This insures that the fullscreen loading view disappears and the user sees impor
 
 ### Hybrid Mode
 
-####  ❗️️️ ❗️️️ Important ❗️️️ ❗️️️
-
-Please note that this mode will will be deprecated in the future. If you are currently using Hybrid mode, please migrate from Hybrid mode as soon as possible. If you can't, don't hesitate to contact us and we'll investigate a solution that will work with your integration needs.
-
 #### Initialization
 
 If you are using the Klarna Checkout in a web view by loading your Checkout URL (or by loading another URL that contains the checkout snippet), you instantiate `KCOKlarnaCheckout` in the same way as before, but you instead attach your web view.
