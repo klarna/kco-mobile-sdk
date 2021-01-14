@@ -24,6 +24,10 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [1.6.15] - 2021-01-14
+- Fixed an issue with external apps.
+- Improvements for apps targeting Android 11.
+
 ### [1.6.14] - 2020-08-18
 - Added merchantHandlesEpm for handling external payment methods.
 - Added merchantHandlesValidationErrors for handling validation error.
