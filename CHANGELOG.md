@@ -4,6 +4,9 @@ All notable changes to Checkout Mobile SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [1.6.15] - 2021-02-03
+- Fixed merchantHandlesEpm and merchantHandlesValidationErrors.
+
 ### [1.6.14] - 2020-10-08
 - KlarnaCheckoutSDK is available as a Swift package.
 - Carthage binary available.
