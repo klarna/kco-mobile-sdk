@@ -1,6 +1,6 @@
 {
     "name": "KlarnaCheckoutSDK",
-    "version": "1.6.14",
+    "version": "1.6.15",
     "summary": "Klarna Checkout iOS SDK",
     "description": "Simple integration of Klarna Checkout for native and hybrid iOS apps.",
     "homepage": "https://github.com/klarna/kco-mobile-sdk",
