@@ -10,7 +10,7 @@
     "license": "Apache License, Version 2.0",
     "source": {
         "git": "https://github.com/klarna/kco-mobile-sdk.git",
-        "tag": "v1.6.14"
+        "tag": "v1.6.15"
     },
     "requires_arc": true,
     "platforms": {
