@@ -8,8 +8,8 @@ Pod::Spec.new do |s|
     s.homepage     = "https://github.com/klarna/kco-mobile-sdk.git"
     s.license      = { :type => "Apache License, Version 2.0", :file => "LICENSE" }
     s.author       = { "Klarna Mobile SDK Team" => "mobile.sdk@klarna.com" }
-    s.platform     = :ios, "8.0"
-    s.source       = { :git => "https://github.com/klarna/kco-mobile-sdk.git", :tag => s.version.to_s }
+    s.platform     = :ios, "10.0"
+    s.source       = { :git => "https://github.com/klarna/kco-mobile-sdk.git", :tag => "v"+s.version.to_s }
     s.requires_arc = true
 
     s.subspec 'legacy' do |sb|
@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
     end
 
     s.subspec 'xcframework' do |sb|
-        sb.vendored_frameworks = "ios/KlarnaCheckoutSDK.xcframework"
+        sb.vendored_frameworks = "ios/XCFramework/KlarnaCheckoutSDK.xcframework"
     end
 
     s.default_subspec = 'xcframework'
