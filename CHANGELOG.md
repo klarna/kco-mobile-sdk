@@ -4,6 +4,11 @@ All notable changes to Checkout Mobile SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [1.7.0] - 2021-11-15
+- Support for M1.
+- Improved support for 3DSecure flows in new markets.
+- Internal optimization and improvements.
+
 ### [1.6.15] - 2021-02-03
 - Fixed merchantHandlesEpm and merchantHandlesValidationErrors.
 

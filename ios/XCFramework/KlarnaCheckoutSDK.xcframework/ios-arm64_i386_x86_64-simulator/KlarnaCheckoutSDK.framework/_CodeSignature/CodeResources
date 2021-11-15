@@ -10,7 +10,7 @@
 		</data>
 		<key>Headers/KCOCheckoutViewControllerProtocol.h</key>
 		<data>
-		58FXlyw5VoEHXvd5SNeUCSC7OJU=
+		NK6Kod0HFd0Au2tT4u8ezwEH3R0=
 		</data>
 		<key>Headers/KCOConstants.h</key>
 		<data>
@@ -26,7 +26,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		ze3Hbr2sNhtKNZAjdHGTQCbqAng=
+		bZPiqmAu2y3Cqmd5saDWUs+b8Wk=
+		</data>
+		<key>KlarnaCheckoutSDK-Framework.plist</key>
+		<data>
+		KbsW59F//onfJOV1sTjikyyOENo=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -98,11 +102,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			58FXlyw5VoEHXvd5SNeUCSC7OJU=
+			NK6Kod0HFd0Au2tT4u8ezwEH3R0=
 			</data>
 			<key>hash2</key>
 			<data>
-			d6YIUAXpjcksxWgoZW49SyIN0UJqaLQ0rA4CEW38PdM=
+			WRiK3+SNWBWOkoSS6pOs07VkxNwh23tBjAkwOfC5Gdc=
 			</data>
 		</dict>
 		<key>Headers/KCOConstants.h</key>
@@ -136,6 +140,17 @@
 			<key>hash2</key>
 			<data>
 			8dzfXhh1HvDj5Mir64IXFGMSqivYDK3VWlM+iG6azvY=
+			</data>
+		</dict>
+		<key>KlarnaCheckoutSDK-Framework.plist</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			KbsW59F//onfJOV1sTjikyyOENo=
+			</data>
+			<key>hash2</key>
+			<data>
+			71P5ku/iovySohqO1xT9RihAIbOXJlvrKc61oHcv3fg=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
