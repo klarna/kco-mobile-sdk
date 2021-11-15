@@ -13,6 +13,12 @@
 @property (nonatomic, assign) BOOL internalScrollDisabled;
 
 /**
+ * Allows the SDK to set the parent scroll view's insets when keyboards appear, if there isn't enough space
+ * below to present all the txt fields.
+ */
+@property (nonatomic, assign) BOOL adjustsParentScrollViewInsets;
+
+/**
  * Make sure to set sizingDelegate when using it in a child view controller.
  * If you are embeddning the view in a scrollView you should also disable internal scroll,
  * otherwise setting this delegate won't have any effect.
