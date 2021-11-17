@@ -32,6 +32,10 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [1.7.0] - 2021-11-15
+- Improved support for 3DSecure flows in new markets.
+- Internal optimization and improvements.
+
 ### [1.6.15] - 2021-01-14
 - Fixed an issue with external apps.
 - Improvements for apps targeting Android 11.
