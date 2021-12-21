@@ -32,6 +32,9 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [1.7.1] - 2021-12-21
+- Fixed flickering on height change for standalone and embedded views.
+
 ### [1.7.0] - 2021-11-15
 - Improved support for 3DSecure flows in new markets.
 - Internal optimization and improvements.
