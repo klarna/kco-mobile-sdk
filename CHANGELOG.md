@@ -4,6 +4,15 @@ All notable changes to Checkout Mobile SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [1.7.3] - 2022-04-08
+- Fixed issue when attachWebView was called twice (Hybrid).
+
+### [1.7.2] - 2022-02-01
+- Support Universal links in Browser.
+
+### [1.7.1] - 2022-01-24
+- Support for BankID URL in Browser.
+
 ### [1.7.0] - 2021-11-15
 - Support for M1.
 - Improved support for 3DSecure flows in new markets.
