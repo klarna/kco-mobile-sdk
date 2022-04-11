@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = "KlarnaCheckoutSDK"
-    s.version      = "1.7.2"
+    s.version      = "1.7.3"
     s.summary      = "Klarna Checkout iOS SDK"
     s.description  = <<-DESC
     Simple integration of Klarna Checkout for native and hybrid iOS apps.
