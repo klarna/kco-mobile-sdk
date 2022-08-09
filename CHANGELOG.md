@@ -41,6 +41,10 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [1.7.2] - 2022-08-09
+- Added webview onRenderProcessGone handler.
+- Fixed lifecycle observer initialization.
+
 ### [1.7.1] - 2021-12-21
 - Fixed flickering on height change for standalone and embedded views.
 
